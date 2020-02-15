@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<animals>
+	<zver>
+		<name>Лев</name>
+		<place>Саванна</place>
+		<food>Гиены шакалы</food>
+	</zver>
+	<zver>
+		<name>Акула</name>
+		<place>Океан</place>
+		<food>Рыбы киты акулы люди</food>
+	</zver>
+	<zver>
+		<name>Гиена</name>
+		<place>Саванна</place>
+		<food>Падаль</food>
+	</zver>
+</animals>

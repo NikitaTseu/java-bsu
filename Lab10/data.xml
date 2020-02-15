@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<workers>
+	<security>
+		<name>Василий</name>
+		<position>Старший охранник</position>
+		<salary>1600</salary>
+		<obj>кинотеатр</obj>
+	</security>
+	<security>
+		<name>Василий</name>
+		<position>Начальник смены</position>
+		<salary>2000</salary>
+		<obj>магазин</obj>
+	</security>
+	<security>
+		<name>Ярослав</name>
+		<position>Начальник смены</position>
+		<salary>2500</salary>
+		<obj>банк</obj>
+	</security>
+	<security>
+		<name>Павел</name>
+		<position>Начальник смены</position>
+		<salary>2200</salary>
+		<obj>магазин</obj>
+	</security>
+	<security>
+		<name>Василий</name>
+		<position>Старший охранник</position>
+		<salary>1800</salary>
+		<obj>кинотеатр</obj>
+	</security>
+	<security>
+		<name>Игнат</name>
+		<position>Старший охранник</position>
+		<salary>1650</salary>
+		<obj>банк</obj>
+	</security>
+	<security>
+		<name>Владимир</name>
+		<position>Стажер</position>
+		<salary>1000</salary>
+		<obj>магазин</obj>
+	</security>
+	<security>
+		<name>Павел</name>
+		<position>Стажер</position>
+		<salary>1150</salary>
+		<obj>банк</obj>
+	</security>
+</workers>

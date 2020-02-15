@@ -1,0 +1,4 @@
+Reno,red,ROCKETFUEL,1,1
+Wada,white,DISEL,1,2
+Reno,green,ROCKETFUEL,1,1
+Reno,red,ROCKETFUEL,1,1

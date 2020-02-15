@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<workers>
+	<security>
+		<name>Vasiliy</name>
+		<position>Security oficcer</position>
+		<salary>2000</salary>
+		<obj>shop</obj>
+	</security>
+	<security>
+		<name>Vasiliy</name>
+		<position>Security oficcer</position>
+		<salary>2000</salary>
+		<obj>shop</obj>
+	</security>
+	<security>
+		<name>Vasiliy</name>
+		<position>Security oficcer</position>
+		<salary>2500</salary>
+		<obj>shop</obj>
+	</security>
+	<security>
+		<name>Vasiliy</name>
+		<position>Security oficcer</position>
+		<salary>1000</salary>
+		<obj>shop</obj>
+	</security>
+	<security>
+		<name>Vasiliy</name>
+		<position>Security oficcer</position>
+		<salary>2300</salary>
+		<obj>shop</obj>
+	</security>
+</workers>
