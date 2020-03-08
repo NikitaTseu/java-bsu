@@ -1,28 +1,32 @@
 package tp01;
 
+import java.awt.Graphics;
 import java.awt.Point;
 
 public class LineSegment extends Figure {
-	protected Point start;
-	protected Point end;
+	private Point end;
 
 	public LineSegment(Point start, Point end) {
-		this.start = start;
+		this.setLocation(start);
 		this.end = end;
-
-		location.x = (start.x + end.x) / 2;
-		location.y = (start.y + end.y) / 2;
 	}
 
-	public void move(int dx, int dy) {
-		super.move(dx, dy);
-		start.x += dx;
-		start.y += dy;
-		end.x += dx;
-		end.y += dy;
+	public void move(Point p) {
+		super.move(p);
+		end.x += getDelta(p).x;
+		end.y += getDelta(p).y;
 	};
 
-	public void draw() {
-		
+	public void draw(Graphics g) {
+		g.setColor(this.getBorderColor());
+        g.drawLine(this.getLocation().x, this.getLocation().y, end.x, end.y);
+	}
+
+	public Point getEnd() {
+		return end;
+	}
+
+	public void setEnd(Point end) {
+		this.end = end;
 	};
 }

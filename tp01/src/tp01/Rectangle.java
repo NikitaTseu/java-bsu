@@ -3,10 +3,11 @@ package tp01;
 import java.awt.Graphics;
 import java.awt.Point;
 
-public class Ellipse extends Shape {
+public class Rectangle extends Shape {
+
 	private int h, w;
 
-	public Ellipse(Point a1, Point a2) {
+	public Rectangle(Point a1, Point a2) {
 		Point p1 = (Point) a2.clone();
 		Point p2 = (Point) a2.clone();
 		if (p1.y < p2.y) {
@@ -33,9 +34,9 @@ public class Ellipse extends Shape {
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(this.getBorderColor());
-		g.drawOval(this.getLocation().x - w, this.getLocation().y - h, w, h);
+		g.drawRect(this.getLocation().x - w, this.getLocation().y - h, w, h);
 		g.setColor(this.getBgColor());
-		g.fillOval(this.getLocation().x - w, this.getLocation().y - h, w, h);
+		g.fillRect(this.getLocation().x - w, this.getLocation().y - h, w, h);
 	}
 
 	public int getH() {

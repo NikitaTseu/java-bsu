@@ -1,19 +1,21 @@
 package tp01;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Point;
 
 public abstract class Figure {
-	protected Point location = new Point(10, 10);
-	protected Color borderColor = Color.BLACK;
+	private Point location;
+	private Color borderColor = Color.BLACK;
 
-	public abstract void draw();
+	public abstract void draw(Graphics g);
+	
+	public Point getDelta(Point p) {
+		return new Point(location.x - p.x, location.y - p.y);
+	}
 
-	public void move(int dx, int dy) {
-		location.x += dx;
-		location.y += dy;
-		
-		draw();
+	public void move(Point p) {
+		location = p;
 	}
 	
 	public Color getBorderColor() {
