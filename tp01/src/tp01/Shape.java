@@ -1,6 +1,7 @@
 package tp01;
 
 import java.awt.Color;
+import java.awt.Point;
 
 public abstract class Shape extends Figure {
 	private Color bgColor = Color.WHITE;

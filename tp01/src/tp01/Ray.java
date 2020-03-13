@@ -2,6 +2,7 @@ package tp01;
 
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.geom.Ellipse2D;
 
 public class Ray extends LineSegment {
 
@@ -40,4 +41,10 @@ public class Ray extends LineSegment {
 		g.drawOval(x1 - 2, y1 - 2, 4, 4);
 		g.fillOval(x1 - 2, y1 - 2, 4, 4);
 	}
+	
+	@Override
+	public boolean contains(Point p) {
+		Ellipse2D area = new Ellipse2D.Double(this.getLocation().x - 3, this.getLocation().y - 3, 6, 6);
+		return area.contains(p);
+	};
 }

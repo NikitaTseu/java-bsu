@@ -2,6 +2,7 @@ package tp01;
 
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Polygon;
 
 public class Rectangle extends Shape {
 
@@ -24,6 +25,12 @@ public class Rectangle extends Shape {
 
 		w = (int) (p2.x - p1.x);
 		h = (int) (p2.y - p1.y);
+	}
+	
+	@Override
+	public boolean contains(Point p) {
+		java.awt.Rectangle area = new java.awt.Rectangle(this.getLocation().x, this.getLocation().y, w, h);
+		return area.contains(p);
 	}
 
 	@Override

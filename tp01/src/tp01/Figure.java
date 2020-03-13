@@ -11,7 +11,7 @@ public abstract class Figure {
 	public abstract void draw(Graphics g);
 	
 	public Point getDelta(Point p) {
-		return new Point(location.x - p.x, location.y - p.y);
+		return new Point(p.x - location.x, p.y - location.y);
 	}
 
 	public void move(Point p) {
@@ -21,6 +21,8 @@ public abstract class Figure {
 	public Color getBorderColor() {
 		return borderColor;
 	}
+	
+	public abstract boolean contains(Point p);
 
 	public void setBorderColor(Color borderColor) {
 		this.borderColor = borderColor;

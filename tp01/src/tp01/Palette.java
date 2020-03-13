@@ -9,16 +9,14 @@ import java.awt.event.ActionListener;
 public class Palette extends JFrame {
 
 	private MenuBar menuBar;
-	private Menu chooseFigure, chooseMode, chooseColor;
+	private Menu chooseFigure, chooseColor;
 	private MenuItem line, polygon, circle, ellipse, lineSegment, ray, customPolygon, polyLine, rectangle, rhombus,
 			regularPolygon;
-	private MenuItem draw, move;
 	private MenuItem backgroundColor, borderColor;
 	private Color bgColor = Color.PINK, brColor = Color.BLACK;
 	private DrawPanel drawPanel;
 
 	private FigureType figureType = FigureType.LINESEGMENT;
-	private boolean drawMode = true;
 
 	public Palette() {
 		setTitle("Our Lovely Paint");
@@ -47,16 +45,11 @@ public class Palette extends JFrame {
 		chooseFigure.add(rhombus = new MenuItem("Rhombus"));
 		chooseFigure.add(regularPolygon = new MenuItem("Triangle"));
 
-		chooseMode = new Menu("Choose mode");
-		chooseMode.add(draw = new MenuItem("draw"));
-		chooseMode.add(move = new MenuItem("move"));
-
 		chooseColor = new Menu("Choose color");
 		chooseColor.add(backgroundColor = new MenuItem("Background Color"));
 		chooseColor.add(borderColor = new MenuItem("Border Color"));
 
 		menuBar.add(chooseFigure);
-		menuBar.add(chooseMode);
 		menuBar.add(chooseColor);
 
 		backgroundColor.addActionListener(new ActionListener() {
@@ -78,23 +71,7 @@ public class Palette extends JFrame {
 		});
 
 		chooseFigure.addActionListener(figureListener);
-		chooseMode.addActionListener(modeListener);
-
 	}
-
-	ActionListener modeListener = new ActionListener() {
-		public void actionPerformed(ActionEvent event) {
-			if (event.getActionCommand().equals("draw")) {
-				drawMode = true;
-				System.out.println(drawMode);
-
-			} else if (event.getActionCommand().equals("move")) {
-				drawMode = false;
-				System.out.println(drawMode);
-
-			}
-		}
-	};
 
 	ActionListener figureListener = new ActionListener() {
 		public void actionPerformed(ActionEvent event) {
@@ -108,7 +85,7 @@ public class Palette extends JFrame {
 
 			case "Custom polygon":
 				n = getN(3);
-				if(n > 0) {
+				if (n > 0) {
 					figureType = FigureType.CUSTOMPOLYGON;
 					drawPanel.setBufferLimit(n);
 				}
@@ -116,7 +93,7 @@ public class Palette extends JFrame {
 
 			case "Polyline":
 				n = getN(3);
-				if(n > 0) {
+				if (n > 0) {
 					figureType = FigureType.POLYLINE;
 					drawPanel.setBufferLimit(n);
 				}
@@ -134,7 +111,7 @@ public class Palette extends JFrame {
 
 			case "Regular polygon":
 				n = getN(3);
-				if(n > 0) {
+				if (n > 0) {
 					figureType = FigureType.REGULARPOLYGON;
 					drawPanel.setN(n);
 				}
@@ -171,10 +148,10 @@ public class Palette extends JFrame {
 			}
 		}
 	};
-	
-    private int getN(int minN) {
-    	String s = JOptionPane.showInputDialog(drawPanel, "n = ");
-    	
+
+	private int getN(int minN) {
+		String s = JOptionPane.showInputDialog(drawPanel, "n = ");
+
 		if (s == null || s.equals(""))
 			JOptionPane.showMessageDialog(drawPanel, "Incorrect input! Figure won't be changed.", "Error",
 					JOptionPane.ERROR_MESSAGE);
@@ -186,14 +163,13 @@ public class Palette extends JFrame {
 					JOptionPane.showMessageDialog(drawPanel, "You should enter a number greater then " + (minN - 1));
 					return getN(minN);
 				}
-			}
-			catch(NumberFormatException e) {
+			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(drawPanel, "Incorrect input! Figure won't be changed.", "Error",
 						JOptionPane.ERROR_MESSAGE);
 			}
 		}
 		return -1;
-    }
+	}
 
 	public Color getBgColor() {
 		return bgColor;
@@ -217,13 +193,5 @@ public class Palette extends JFrame {
 
 	public void setFigureType(FigureType figureType) {
 		this.figureType = figureType;
-	}
-
-	public boolean isDrawMode() {
-		return drawMode;
-	}
-
-	public void setDrawMode(boolean modeType) {
-		this.drawMode = modeType;
 	}
 }

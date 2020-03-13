@@ -2,6 +2,7 @@ package tp01;
 
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.geom.Ellipse2D;
 
 public class Ellipse extends Shape {
 	private int h, w;
@@ -26,6 +27,12 @@ public class Ellipse extends Shape {
 		h = (int) (p2.y - p1.y);
 		
 		this.setLocation(p1);
+	}
+	
+	@Override
+	public boolean contains(Point p) {
+		Ellipse2D area = new Ellipse2D.Double(this.getLocation().x, this.getLocation().y, w, h);
+		return area.contains(p);
 	}
 
 	@Override

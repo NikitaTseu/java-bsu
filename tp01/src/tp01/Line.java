@@ -2,6 +2,7 @@ package tp01;
 
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.geom.Ellipse2D;
 
 public class Line extends Ray {
 
@@ -30,4 +31,11 @@ public class Line extends Ray {
 		g.drawOval(x2 - 2, y2 - 2, 4, 4);
 		g.fillOval(x2 - 2, y2 - 2, 4, 4);
 	}
+	
+	@Override
+	public boolean contains(Point p) {
+		Ellipse2D area1 = new Ellipse2D.Double(this.getLocation().x - 3, this.getLocation().y - 3, 6, 6);
+		Ellipse2D area2 = new Ellipse2D.Double(this.getEnd().x - 3, this.getEnd().y - 3, 6, 6);
+		return (area1.contains(p) || area2.contains(p));
+	};
 }

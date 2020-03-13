@@ -2,6 +2,7 @@ package tp01;
 
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Polygon;
 
 public class Rhombus extends Shape {
 
@@ -34,13 +35,19 @@ public class Rhombus extends Shape {
 		xpoints[3] = p1.x;
 		ypoints[3] = ypoints[1];
 	}
+	
+	@Override
+	public boolean contains(Point p) {
+		Polygon area = new Polygon(xpoints, ypoints, 4);
+		return area.contains(p);
+	}
 
 	public void move(Point p) {
-		super.move(p);
 		for (int i = 0; i < 4; i++) {
 			xpoints[i] += getDelta(p).x;
 			ypoints[i] += getDelta(p).y;
 		}
+		super.move(p);
 	}
 
 	@Override

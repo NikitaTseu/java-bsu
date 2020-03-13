@@ -2,6 +2,7 @@ package tp01;
 
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Polygon;
 
 public class RegularPolygon extends Shape {
 
@@ -21,13 +22,19 @@ public class RegularPolygon extends Shape {
 	}
 
 	public void move(Point p) {
-		super.move(p);
 		for (int i = 0; i < n; i++) {
 			xpoints[i] += getDelta(p).x;
 			ypoints[i] += getDelta(p).y;
 		}
+		super.move(p);
 	}
 
+	@Override
+	public boolean contains(Point p) {
+		Polygon area = new Polygon(xpoints, ypoints, n);
+		return area.contains(p);
+	}
+	
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(this.getBgColor());
