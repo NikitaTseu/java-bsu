@@ -1,4 +1,4 @@
-package tp01;
+package figures;
 
 import java.awt.Color;
 import java.awt.Graphics;

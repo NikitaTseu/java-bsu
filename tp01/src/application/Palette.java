@@ -1,4 +1,4 @@
-package tp01;
+package application;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,4 +1,4 @@
-package tp01;
+package application;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,11 +7,13 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
+import figures.*;
+import figures.Rectangle;
+import figures.Shape;
 
 @SuppressWarnings("serial")
 public class DrawPanel extends JPanel {
 
-	// private DrawPanel drawPanel; // it's me
 	private Palette mainPalette; // it's my parent Panel
 	private List<Figure> figureList = new ArrayList<Figure>();
 	private List<Point> pointBuffer = new ArrayList<Point>();
@@ -21,7 +23,6 @@ public class DrawPanel extends JPanel {
 	private BufferedImage bufferedImage = new BufferedImage(1200, 900, BufferedImage.TYPE_INT_ARGB);
 
 	public DrawPanel(Palette palette) {
-		// this.drawPanel = this;
 		this.mainPalette = palette;
 
 		this.addMouseListener(adapter);

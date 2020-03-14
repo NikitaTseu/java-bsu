@@ -1,4 +1,4 @@
-package tp01;
+package figures;
 
 import java.awt.Graphics;
 import java.awt.Point;

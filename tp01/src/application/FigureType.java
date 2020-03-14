@@ -1,4 +1,4 @@
-package tp01;
+package application;
 
 public enum FigureType {
     LINE, CIRCLE, ELLIPSE, LINESEGMENT, RAY, CUSTOMPOLYGON, REGULARPOLYGON, POLYLINE, RECTANGLE, RHOMBUS, TRIANGLE
