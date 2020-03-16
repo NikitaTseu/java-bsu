@@ -113,6 +113,7 @@ public class Palette extends JFrame {
 				n = getN(3);
 				if (n > 0) {
 					figureType = FigureType.REGULARPOLYGON;
+					drawPanel.setBufferLimit(2);
 					drawPanel.setN(n);
 				}
 				break;
